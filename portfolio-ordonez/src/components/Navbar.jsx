@@ -1,42 +1,70 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30)
-    }
+      setScrolled(window.scrollY > 30);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out
         mx-auto px-6 py-4
-        ${scrolled
-          ? 'mt-5 max-w-5xl rounded-2xl bg-green-600/80 shadow-lg backdrop-blur-md border border-white/10'
-          : 'mt-0 max-w-full rounded-none bg-red-700'
-        }`}>
-        
-      <div className="flex justify-between items-center text-white text-sm font-medium">
-        <div className="text-lg font-bold tracking-wide">
-          Jose 🐐
+        ${
+          scrolled
+            ? "mt-5 max-w-2xl rounded-2xl backdrop-blur-md shadow-md border border-[#c22a2a]/30 bg-white/80"
+            : "mt-0 max-w-full rounded-none bg-transparent border-b border-[#c22a2a]/30 shadow-sm"
+        }
+      `}
+    >
+      <div
+        className="
+          flex justify-between items-center text-sm font-medium text-[#213547]
+        "
+      >
+        {/* Logo / Nombre */}
+        <div className="text-lg font-bold tracking-wide text-[#c22a2a]">
+          Jose Pablo
         </div>
-        
+
+        {/* Navegación */}
         <div className="flex gap-6">
-          <a href="#hero" className="hover:text-lime-300 transition-colors">Inicio</a>
-          <a href="#about" className="hover:text-lime-300 transition-colors">Sobre mí</a>
-          <a href="#skills" className="hover:text-lime-300 transition-colors">Skills</a>
-          <a href="#projects" className="hover:text-lime-300 transition-colors">Proyectos</a>
-          <a href="#contact" className="hover:text-lime-300 transition-colors">Contacto</a>
+          <a
+            href="#hero"
+            className="transition-colors text-[#213547] hover:text-[#c22a2a]"
+          >
+            Inicio
+          </a>
+
+          <a
+            href="#projects"
+            className="transition-colors text-[#213547] hover:text-[#c22a2a]"
+          >
+            Proyectos
+          </a>
+          <a
+            href="#skills"
+            className="transition-colors text-[#213547] hover:text-[#c22a2a]"
+          >
+            Skills
+          </a>
+          <a
+            href="#contact"
+            className="transition-colors text-[#213547] hover:text-[#c22a2a]"
+          >
+            Contacto
+          </a>
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
