@@ -10,7 +10,7 @@ const projects = [
       "Una innovadora app móvil que conecta a los estudiantes de UVG para compartir rutas y optimizar la movilidad universitaria.",
     image: "./src/assets/uvgride.webp",
     repo: "https://github.com/Anton17303/Proyecto-UVGride.git",
-    tech: ["React Native", "Expo", "Node.js", "Express", "PostgreSQL"]
+    tech: ["React Native", "Expo", "Node.js", "Express", "PostgreSQL"],
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projects = [
       "Calculadora web con diseño minimalista y componentes reutilizables, ideal para prácticas de desarrollo front-end.",
     image: "./src/assets/calculadora.webp",
     repo: "https://github.com/JoseOrdonezB/proyecto-1.git",
-    tech: ["React", "JavaScript", "CSS"]
+    tech: ["React", "JavaScript", "CSS"],
   },
   {
     id: 3,
@@ -28,15 +28,15 @@ const projects = [
       "Plataforma moderna y eficiente para la gestión de cursos y estudiantes, con integración de bases de datos.",
     image: "./src/assets/cursos.webp",
     repo: "https://github.com/JoseOrdonezB/proyecto3-db.git",
-    tech: ["Python", "PostgreSQL", "Docker", "CSS", "JavaScript"]
-  }
+    tech: ["Python", "PostgreSQL", "Docker", "CSS", "JavaScript"],
+  },
 ];
 
 const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col justify-center items-center gap-12 px-4 py-16 pt-24 md:pt-2  text-[#213547]"
+      className="min-h-screen flex flex-col justify-center items-center gap-12 px-4 py-16 pt-24 text-[#213547]"
     >
       {/* Título animado */}
       <motion.div
