@@ -20,7 +20,7 @@ const Navbar = () => {
         ${
           scrolled
             ? "mt-5 max-w-2xl rounded-2xl backdrop-blur-md shadow-md bg-[#b76a6a]/10"
-            : "mt-0 max-w-full rounded-none bg-white/40  shadow-sm"
+            : "mt-0 max-w-full rounded-none bg-white/60  shadow-sm"
         }
       `}
     >
