@@ -19,8 +19,8 @@ const Navbar = () => {
         mx-auto px-6 py-4
         ${
           scrolled
-            ? "mt-5 max-w-2xl rounded-2xl backdrop-blur-md shadow-md border border-[#c22a2a]/30 bg-white/80"
-            : "mt-0 max-w-full rounded-none bg-transparent border-b border-[#c22a2a]/30 shadow-sm"
+            ? "mt-5 max-w-2xl rounded-2xl backdrop-blur-md shadow-md bg-[#b76a6a]/10"
+            : "mt-0 max-w-full rounded-none bg-white/40  shadow-sm"
         }
       `}
     >

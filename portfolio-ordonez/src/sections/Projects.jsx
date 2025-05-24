@@ -1,34 +1,34 @@
 import React from "react";
 import { Github } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
     id: 1,
-    name: "Proyecto 1",
-    description: "Descripción breve del proyecto 1.",
-    image: "./src/assets/project1.png", // Reemplázalo con la ruta de tu imagen
-    repo: "https://github.com/JoseOrdonezB/proyecto-1"
+    name: "UVGride",
+    description:
+      "Una innovadora app móvil que conecta a los estudiantes de UVG para compartir rutas y optimizar la movilidad universitaria.",
+    image: "./src/assets/uvgride.webp",
+    repo: "https://github.com/Anton17303/Proyecto-UVGride.git",
+    tech: ["React Native", "Expo", "Node.js", "Express", "PostgreSQL"]
   },
   {
     id: 2,
-    name: "Proyecto 2",
-    description: "Descripción breve del proyecto 2.",
-    image: "./src/assets/project2.png",
-    repo: "https://github.com/JoseOrdonezB/proyecto-2"
+    name: "Calculadora",
+    description:
+      "Calculadora web con diseño minimalista y componentes reutilizables, ideal para prácticas de desarrollo front-end.",
+    image: "./src/assets/calculadora.webp",
+    repo: "https://github.com/JoseOrdonezB/proyecto-1.git",
+    tech: ["React", "JavaScript", "CSS"]
   },
   {
     id: 3,
-    name: "Proyecto 3",
-    description: "Descripción breve del proyecto 3.",
-    image: "./src/assets/project3.png",
-    repo: "https://github.com/JoseOrdonezB/proyecto-3"
-  },
-  {
-    id: 4,
-    name: "Proyecto 4",
-    description: "Descripción breve del proyecto 4.",
-    image: "./src/assets/project4.png",
-    repo: "https://github.com/JoseOrdonezB/proyecto-4"
+    name: "Gestión de cursos",
+    description:
+      "Plataforma moderna y eficiente para la gestión de cursos y estudiantes, con integración de bases de datos.",
+    image: "./src/assets/cursos.webp",
+    repo: "https://github.com/JoseOrdonezB/proyecto3-db.git",
+    tech: ["Python", "PostgreSQL", "Docker", "CSS", "JavaScript"]
   }
 ];
 
@@ -36,46 +36,66 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="
-        min-h-screen flex flex-col justify-center items-center
-        gap-12 px-4 py-16 bg-white text-[#213547]
-      "
+      className="min-h-screen flex flex-col justify-center items-center gap-12 px-4 py-16 pt-24 md:pt-2  text-[#213547]"
     >
-      {/* Título */}
-      <div className="flex flex-col items-center gap-2">
-        <h2 className="text-3xl font-bold">Proyectos</h2>
-        <div className="h-1 w-12 bg-[#c22a2a] rounded-full"></div>
-      </div>
-
-      {/* Grid de proyectos */}
-      <div
-        className="
-          grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl
-        "
+      {/* Título animado */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center gap-2"
       >
-        {projects.map((project) => (
+        <h2 className="text-5xl font-bold">Proyectos</h2>
+        <div className="h-1 w-18 bg-[#c22a2a] rounded-full"></div>
+      </motion.div>
+
+      {/* Lista de proyectos animada */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="flex flex-col gap-12 w-full max-w-3xl"
+      >
+        {projects.map(({ id, name, description, image, repo, tech }) => (
           <div
-            key={project.id}
+            key={id}
             className="
               bg-[#f9f9f9] rounded-lg overflow-hidden shadow-sm
               hover:shadow-md transition-shadow border border-[#c22a2a]/20
+              flex flex-col
             "
           >
-            <div className="w-full h-48 overflow-hidden">
-              {/* Imagen del proyecto */}
+            {/* Imagen del proyecto */}
+            <div className="w-full h-64 overflow-hidden">
               <img
-                src={project.image}
-                alt={project.name}
+                src={image}
+                alt={name}
                 className="w-full h-full object-cover"
               />
             </div>
 
-            <div className="p-4 flex flex-col gap-2">
-              <h3 className="text-lg font-bold">{project.name}</h3>
-              <p className="text-sm opacity-80">{project.description}</p>
+            {/* Info del proyecto */}
+            <div className="p-6 flex flex-col gap-3">
+              <h3 className="text-xl font-bold text-[#c22a2a]">{name}</h3>
+              <p className="text-sm opacity-80">{description}</p>
 
+              {/* Tecnologías utilizadas */}
+              <div className="flex flex-wrap gap-2 mt-2">
+                {tech.map((t, index) => (
+                  <span
+                    key={index}
+                    className="text-xs bg-[#c22a2a]/10 text-[#c22a2a] px-2 py-1 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              {/* Link al repositorio */}
               <a
-                href={project.repo}
+                href={repo}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 text-[#213547] hover:text-[#c22a2a] transition-colors text-sm mt-2"
@@ -85,7 +105,7 @@ const Projects = () => {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

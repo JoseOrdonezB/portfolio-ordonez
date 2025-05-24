@@ -14,32 +14,32 @@ const skills = [
   {
     icon: <SiHtml5 size={32} />,
     title: "HTML5 & CSS3",
-    description: "Base sólida para la construcción de interfaces web."
+    description: "Estandar de construcción y diseño para interfaces web modernas y accesibles."
   },
   {
     icon: <SiJavascript size={32} />,
     title: "JavaScript",
-    description: "Lenguaje dinámico para crear experiencias interactivas."
+    description: "Lenguaje esencial para crear experiencias web interactivas y dinámicas."
   },
   {
     icon: <SiReact size={32} />,
     title: "React",
-    description: "Librería para interfaces SPA rápidas y dinámicas."
+    description: "Librería para construir interfaces de usuario rápidas y componentes reutilizables."
   },
   {
     icon: <SiTailwindcss size={32} />,
     title: "Tailwind CSS",
-    description: "Estilos con clases utilitarias para personalización rápida."
+    description: "Framework de estilos que permite construir interfaces personalizadas rápidamente."
   },
   {
     icon: <SiPostgresql size={32} />,
     title: "PostgreSQL",
-    description: "Base de datos relacional potente y confiable."
+    description: "Base de datos relacional confiable, ideal para aplicaciones con grandes volúmenes de datos."
   },
   {
     icon: <SiPython size={32} />,
     title: "Python",
-    description: "Lenguaje versátil para scripts, automatización y más."
+    description: "Lenguaje de programación versátil y fácil de aprender, popular en ciencia de datos y desarrollo web."
   }
 ];
 
@@ -49,7 +49,7 @@ const Skills = () => {
       id="skills"
       className="
         min-h-screen flex flex-col justify-center items-center
-        gap-12 px-4 py-16 bg-white text-[#213547]
+        gap-12 px-4 py-16 text-[#213547]
       "
     >
       {/* Título animado */}
